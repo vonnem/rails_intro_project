@@ -1,0 +1,22 @@
+<h1 class= "title is-2 has-text-centered">AnimeList</h1>
+<div class="columns">
+  <div class="column">
+    <h2 class="subtitle">Top 50 Animes</h2>
+    <ol>
+      <% @animes.each do |anime| %>
+        <li>
+          <%= link_to anime.title, anime %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="column">
+    <h2 class="subtitle">Studios</h2>
+      <% @studios.each do |studio| %>
+        <li>
+          <%= link_to studio.studio_name, studio %>
+        </li>
+      <% end %>
+  </div>
+</div>
+
