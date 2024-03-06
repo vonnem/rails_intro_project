@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_113855) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_132107) do
   create_table "animes", force: :cascade do |t|
     t.decimal "episodes"
     t.string "title"
@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_113855) do
     t.integer "duration"
     t.string "start_date"
     t.string "end_date"
-    t.string "type"
     t.integer "members"
     t.index ["studio_id"], name: "index_animes_on_studio_id"
   end

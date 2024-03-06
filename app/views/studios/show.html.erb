@@ -1,2 +1,14 @@
-<h1>Studios#show</h1>
-<p>Find me in app/views/studios/show.html.erb</p>
+<h1 class= "title is-2 has-text-centered" ><%= @studio.studio_name %></h1>
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="box">
+      <ul>
+        <% @studio.animes.each do |a| %>
+          <li>
+            <%= link_to a.title, a %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

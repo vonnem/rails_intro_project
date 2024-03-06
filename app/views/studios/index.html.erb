@@ -1,2 +1,10 @@
-<h1>Studios#index</h1>
-<p>Find me in app/views/studios/index.html.erb</p>
+<h1 class="title is-1 has-text-centered">Studio List</h1>
+<ol>
+  <% @studios.each do |studio| %>
+  <div class="box">
+    <h3 class="title is-6 ">
+      <%= link_to studio.studio_name, studio %>
+    </h3>
+  </div>
+  <% end %>
+</ol>

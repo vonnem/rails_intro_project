@@ -1,11 +1,14 @@
-<h1>Anime List</h1>
+<h1 class="title is-1 has-text-centered">Anime List</h1>
 <ol>
   <% @animes.each do |anime| %>
-  <h3>
-    <%= link_to anime.title, anime %>
-  </h3>
-  <p>animated by <%= link_to anime.studio.studio_name, studio_path(anime.studio) %></p>
+  <div class="box">
+    <h3 class="title is-6 ">
+      <%= link_to anime.title, anime %>
+    </h3>
+    <p>animated by <%= link_to anime.studio.studio_name, studio_path(anime.studio) %></p>
+  </div>
   <% end %>
 </ol>
 
+<%= will_paginate @animes %>
 

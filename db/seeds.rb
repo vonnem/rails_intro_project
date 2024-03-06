@@ -20,7 +20,13 @@ animes.each do |a|
     anime = studio.animes.create(
       episodes: a["Episodes"],
       title: a["Title"],
-      score: a["Score"]
+      score: a["Score"],
+      popularity: a["Popularity"],
+      duration: a["Duration"],
+      start_date: a["Start_date"],
+      end_date: a["End_date"],
+      members: a["Members"]
+
     )
     if anime && anime.valid?
       puts a["Title"]
