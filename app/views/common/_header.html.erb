@@ -1,9 +1,12 @@
 <header class="navbar">
   <nav class="subtitle">
     <ul class="columns">
-      <li class="column"><%= link_to "Home", root_path %></li>
+      <% if controller_name != 'home' %>
+        <li class="column"><%= link_to "Home", root_path %></li>
+      <% end %>
       <li class="column"><%= link_to "Animes", animes_path %></li>
       <li class="column"><%= link_to "Studios", studios_path %></li>
+      <li class="column"><%= link_to "About", about_index_path %></li>
     </ul>
   </nav>
 </header>
