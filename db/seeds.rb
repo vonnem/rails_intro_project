@@ -2,6 +2,8 @@ require "csv"
 
 Anime.delete_all
 Studio.delete_all
+AnimeGenre.delete_all
+Genre.delete_all
 
 topanimes = Rails.root.join("db/top250_anime.csv")
 
@@ -30,6 +32,11 @@ animes.each do |a|
     )
     if anime && anime.valid?
       puts a["Title"]
+      genres = a["Genre"].split(",").map(&:strip)
+      genres.each do |gn|
+        genre = Genre.find_or_create_by(genre_name: gn)
+        AnimeGenre.create(anime:anime, genre: genre)
+      end
     else
       puts "Invalid anime: #{a["Title"]}"
     end
@@ -39,4 +46,6 @@ animes.each do |a|
 end
 puts "Created #{Studio.count} studios."
 puts "Created #{Anime.count} animes."
+puts "Created #{Genre.count} genres"
+puts "Created #{AnimeGenre.count} Anime Genres"
 

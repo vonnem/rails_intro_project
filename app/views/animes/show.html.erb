@@ -11,6 +11,7 @@
           <p>Start Date: </p>
           <p>End Date: </p>
           <p>Members: </p>
+          <p>Genre: </p>
           <p>Studio: </p>
         </div>
         <div class="column">
@@ -21,6 +22,7 @@
           <p><%= @anime.start_date %></p>
           <p><%= @anime.end_date %></p>
           <p><%= @anime.members %></p>
+          <p><%= @anime.genres.map(&:genre_name).join(", ") %></p>
           <p><%= link_to @anime.studio.studio_name, studio_path(@anime.studio_id) %></p>
         </div>
       </div>
