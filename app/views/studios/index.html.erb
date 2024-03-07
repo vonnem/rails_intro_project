@@ -1,4 +1,12 @@
 <h1 class="title is-1 has-text-centered">Studio List</h1>
+<%= form_with(url: search_studios_path, method: :get, local: true) do |form| %>
+  <div class="field is-grouped mb-5">
+    <%= text_field_tag(:keyword, nil, class:"input", placeholder: 'Search for animes') %>
+  </div>
+  <div class="control">
+    <%= submit_tag("Search", class: "button is-primary") %>
+  </div>
+<% end %>
 <ol>
   <% @studios.each do |studio| %>
   <div class="box">

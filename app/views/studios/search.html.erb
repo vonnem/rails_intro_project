@@ -1,0 +1,19 @@
+<h1 class="title is-1 has-text-centered">Studio List</h1>
+<%= form_with(url: search_studios_path, method: :get, local: true) do |form| %>
+  <div class="field is-grouped mb-5">
+    <%= text_field_tag(:keywords, nil, class:"input", placeholder: 'Search for studios') %>
+  </div>
+  <div class="control">
+    <%= submit_tag("Search", class: "button is-primary") %>
+  </div>
+<% end %>
+<p class="subtitle">These are the studios results for: <%= params[:keywords] %></p>
+<ol>
+  <% @studios.each do |studio| %>
+  <div class="box">
+    <h3 class="title is-6 ">
+      <%= link_to studio.studio_name, studio %>
+    </h3>
+  </div>
+  <% end %>
+</ol>
