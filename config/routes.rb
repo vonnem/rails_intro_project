@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   # get 'studios/show'
   # get 'animes/index'
   # get 'animes/show'
-  resources :animes, only: [:index, :show]
+  resources :animes, only: [:index, :show] do
+    collection do
+      get "search"
+    end
+  end
   resources :studios, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
