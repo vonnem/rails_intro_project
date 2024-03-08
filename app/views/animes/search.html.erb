@@ -3,11 +3,17 @@
   <div class="field is-grouped mb-5">
     <%= text_field_tag(:keywords, nil, class:"input", placeholder: 'Search for animes') %>
   </div>
+  <div class="field is-grouped mb-5">
+    <%= form.label :studio_id %>
+    <div class="control">
+      <%= form.collection_select :studio_id, Studio.all, :id, :studio_name,  prompt: 'Select a studio'  %>
+    </div>
+  </div>
   <div class="control">
     <%= submit_tag("Search", class: "button is-primary") %>
   </div>
 <% end %>
-<% if params[:keywords].present? %>
+<% if params[:keywords].present? || params[:studio_id].present? %>
   <p class="subtitle">These are the anime results for: <%= params[:keywords] %></p>
   <ol>
     <% @animes.each do |anime| %>

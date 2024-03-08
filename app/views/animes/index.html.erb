@@ -3,6 +3,12 @@
   <div class="field is-grouped mb-5">
     <%= text_field_tag(:keyword, nil, class:"input", placeholder: 'Search for animes') %>
   </div>
+  <div class="field is-grouped mb-5">
+    <%= form.label :studio_id, class: 'label' %>
+    <div class="control">
+      <%= form.collection_select :studio_id, Studio.all, :id, :studio_name, { prompt: 'Select a studio' }, { class: 'select' } %>
+    </div>
+  </div>
   <div class="control">
     <%= submit_tag("Search", class: "button is-primary") %>
   </div>
