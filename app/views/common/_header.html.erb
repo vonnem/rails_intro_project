@@ -1,18 +1,18 @@
 <header class="navbar">
   <div class="nav-bar-menu">
-    <div class="navbar-start">
+    <ul class="navbar-start">
       <% if controller_name != 'home' %>
-        <a class="navbar-item"><%= link_to "Home", root_path %></a>
+        <li class="navbar-item has-text-weight-bold"><%= link_to "Home", root_path %></li>
       <% end %>
       <% if controller_name != 'animes' %>
-        <a class="navbar-item"><%= link_to "Animes", animes_path %></a>
+        <li class="navbar-item has-text-weight-bold"><%= link_to "Animes", animes_path %></li>
       <% end %>
       <% if controller_name != 'studios' %>
-        <a class="navbar-item"><%= link_to "Studios", studios_path %></a>
+        <li class="navbar-item has-text-weight-bold"><%= link_to "Studios", studios_path %></li>
       <% end %>
       <% if controller_name != 'about' %>
-      <a class="navbar-item"><%= link_to "About", about_index_path %></a>
+        <li class="navbar-item has-text-weight-bold"><%= link_to "About", about_index_path %></li>
       <% end %>
-    </div>
+    </ul>
   </div>
 </header>

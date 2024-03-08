@@ -13,9 +13,11 @@
   <div class="column">
     <h2 class="subtitle">Studios</h2>
       <% @studios.each do |studio| %>
+      <ul>
         <li>
           <%= link_to studio.studio_name, studio %>
         </li>
+      </ul>
       <% end %>
   </div>
 </div>
