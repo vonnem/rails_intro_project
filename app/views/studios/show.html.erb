@@ -1,7 +1,13 @@
+require "faker"
+
 <h1 class= "title is-2 has-text-centered" ><%= @studio.studio_name %></h1>
 <div class="columns is-centered">
   <div class="column is-half">
     <div class="box">
+
+    </div>
+    <div class="box">
+    <p class= "title is-6 has-text-centered"> Animes animated by <%= @studio.studio_name %></p>
       <ul>
         <% @studio.animes.each do |a| %>
           <li>
