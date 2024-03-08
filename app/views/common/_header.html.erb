@@ -1,12 +1,18 @@
 <header class="navbar">
-  <nav class="subtitle">
-    <ul class="columns">
+  <div class="nav-bar-menu">
+    <div class="navbar-start">
       <% if controller_name != 'home' %>
-        <li class="column"><%= link_to "Home", root_path %></li>
+        <a class="navbar-item"><%= link_to "Home", root_path %></a>
       <% end %>
-      <li class="column"><%= link_to "Animes", animes_path %></li>
-      <li class="column"><%= link_to "Studios", studios_path %></li>
-      <li class="column"><%= link_to "About", about_index_path %></li>
-    </ul>
-  </nav>
+      <% if controller_name != 'animes' %>
+        <a class="navbar-item"><%= link_to "Animes", animes_path %></a>
+      <% end %>
+      <% if controller_name != 'studios' %>
+        <a class="navbar-item"><%= link_to "Studios", studios_path %></a>
+      <% end %>
+      <% if controller_name != 'about' %>
+      <a class="navbar-item"><%= link_to "About", about_index_path %></a>
+      <% end %>
+    </div>
+  </div>
 </header>
