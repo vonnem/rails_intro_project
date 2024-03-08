@@ -1,4 +1,4 @@
-<h1 class="title is-1 has-text-centered">Anime List</h1>
+<h1 class="title is-1 has-text-centered"><%= link_to "Anime List", animes_path  %></h1>
 <%= form_with(url: search_animes_path, method: :get, local: true) do |form| %>
   <div class="field is-grouped mb-5">
     <%= text_field_tag(:keyword, nil, class:"input", placeholder: 'Search for animes') %>

@@ -1,4 +1,4 @@
-<h1 class="title is-1 has-text-centered">Anime List</h1>
+<h1 class="title is-1 has-text-centered"><%= link_to "Anime List", animes_path  %></h1>
 <%= form_with(url: search_animes_path, method: :get, local: true) do |form| %>
   <div class="field is-grouped mb-5">
     <%= text_field_tag(:keywords, nil, class:"input", placeholder: 'Search for animes') %>
@@ -7,14 +7,28 @@
     <%= submit_tag("Search", class: "button is-primary") %>
   </div>
 <% end %>
-<p class="subtitle">These are the anime results for: <%= params[:keywords] %></p>
-<ol>
-  <% @animes.each do |anime| %>
-  <div class="box">
-    <h3 class="title is-6 ">
-      <%= link_to anime.title, anime %>
-    </h3>
-      <p>animated by <%= link_to anime.studio.studio_name, studio_path(anime.studio) %></p>
-  </div>
-  <% end %>
-</ol>
+<% if params[:keywords].present? %>
+  <p class="subtitle">These are the anime results for: <%= params[:keywords] %></p>
+  <ol>
+    <% @animes.each do |anime| %>
+    <div class="box">
+      <h3 class="title is-6 ">
+        <%= link_to anime.title, anime %>
+      </h3>
+        <p>animated by <%= link_to anime.studio.studio_name, studio_path(anime.studio) %></p>
+    </div>
+    <% end %>
+  </ol>
+<% else %>
+  <p class="subtitle">  ❌Enter an anime title❌ </p>
+  <ol>
+    <% @animes.each do |anime| %>
+    <div class="box">
+      <h3 class="title is-6 ">
+        <%= link_to anime.title, anime %>
+      </h3>
+        <p>animated by <%= link_to anime.studio.studio_name, studio_path(anime.studio) %></p>
+    </div>
+    <% end %>
+  </ol>
+<% end %>
