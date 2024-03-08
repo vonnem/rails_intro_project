@@ -1,10 +1,14 @@
-require "faker"
+require 'faker'
 
 <h1 class= "title is-2 has-text-centered" ><%= @studio.studio_name %></h1>
 <div class="columns is-centered">
   <div class="column is-half">
     <div class="box">
-
+      <ul>
+        <li>Member Favorites: <%= Faker::Number.within(range: 0..100000) %></li>
+        <li>Established: <%= Faker::Date.backward(days: 7300) %></li>
+        <li>Number of employees: <%= Faker::Number.within(range: 0..1000) %></li>
+      </ul>
     </div>
     <div class="box">
     <p class= "title is-6 has-text-centered"> Animes animated by <%= @studio.studio_name %></p>
